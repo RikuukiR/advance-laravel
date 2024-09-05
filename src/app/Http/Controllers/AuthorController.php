@@ -30,7 +30,7 @@ class AuthorController extends Controller
         return view('edit', ['form' => $author]);
     }
 
-    public function update(Request $request){
+    public function update(AuthorRequest $request){
         $form = $request->all();
         unset($form['_token']);
         Author::find($request->id)->update($form);
@@ -52,6 +52,7 @@ class AuthorController extends Controller
     {
         return view('find', ['input' => '']);
     }
+
     public function search(Request $request)
     {
         // $item = Author::where('name', 'LIKE',"%{$request->input}%")->first();
@@ -62,6 +63,7 @@ class AuthorController extends Controller
         ];
         return view('find', $param);
     }
+
     public function bind(Author $author)
     {
         $data = [
@@ -69,4 +71,15 @@ class AuthorController extends Controller
         ];
         return view('author.binds', $data);
     }
+
+    public function verror()
+    {
+    return view('verror');
+    }
+
+    public function relate(Request $request) //追記
+{
+    $items = Author::all();
+    return view('author.index', ['items' => $items]);
+}
 }
