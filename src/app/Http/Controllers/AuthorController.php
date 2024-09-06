@@ -10,9 +10,8 @@ class AuthorController extends Controller
 {
     public function index()
     {
-        $authors = Author::all();
-        // dd($authors);
-        return view('index',['authors' => $authors]);
+        $authors = Author::Paginate(4);
+        return view('index', ['authors' => $authors]);
     }
     // データ追加用ページの表示
     public function add(){
