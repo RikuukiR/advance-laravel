@@ -1,4 +1,5 @@
 @extends('layouts.default')
+
 <style>
   th {
     background-color: #289ADC;
@@ -20,6 +21,7 @@
     /*paginateメソッドの矢印の大きさ調整のために追加*/
     width: 30px;
     height: 30px;
+  }
 
 </style>
 @section('title', 'index.blade.php')
@@ -37,5 +39,5 @@
   </tr>
   @endforeach
 </table>
-{{ $authors->links() }}
+<!-- {{ $authors->links() }} -->
 @endsection
