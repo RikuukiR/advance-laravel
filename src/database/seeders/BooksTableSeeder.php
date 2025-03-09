@@ -16,7 +16,7 @@ class BooksTableSeeder extends Seeder
     {
         $param = [
             'author_id' => 01,
-            'title' => 'AIUEO'
+            'title' => '桃太郎'
         ];
         DB::table('books')->insert($param);
     }
