@@ -12,4 +12,16 @@ class AuthorController extends Controller
         $authors = Author::all();
         return view('index', ['authors' => $authors]);
     }
+
+    public function add()
+    {
+        return view('add');
+    }
+
+    public function create(Request $request)
+    {
+        $form = $request->all();
+        Author::create($form);
+        return redirect('/');
+    }
 }
