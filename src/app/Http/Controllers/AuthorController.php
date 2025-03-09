@@ -78,4 +78,10 @@ class AuthorController extends Controller
         ];
         return view('author.binds', $data);
     }
+
+    public function relate()
+    {
+        $items = Author::all();
+        return view('author.index', ['items' => $items]);
+    }
 }
