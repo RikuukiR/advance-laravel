@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\SessionController;
+use App\Http\Controllers\PenController;
 use App\Models\Person;
 use App\Models\Product;
 use Illuminate\Contracts\Session\Session;
@@ -71,3 +72,7 @@ Route::get('uuid', function () {
         echo $product . '<br>';
     }
 });
+
+Route::get('fill', [PenController::class, 'fillPen']);
+Route::get('create', [PenController::class, 'createPen']);
+Route::get('insert', [PenController::class, 'insertPen']);
